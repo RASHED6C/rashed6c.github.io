@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
 <title>محسوبة | حاسبة الزكاة، التمويل، نهاية الخدمة، والراتب الصافي في السعودية</title>
-<meta name="description" content="حاسبات مالية سعودية مجانية ودقيقة: احسب زكاة المال، أقصى تمويل شخصي متاح لك، مكافأة نهاية الخدمة، راتبك الصافي بعد التأمينات، وحوّل بين التاريخ الهجري والميلادي — كل ذلك في مكان واحد.">
+<meta name="description" content="حاسبات مالية سعودية مجانية: قدّر زكاة المال، مبلغ التمويل الممكن، مكافأة نهاية الخدمة، راتبك الصافي بعد التأمينات، وحوّل بين التاريخ الهجري والميلادي — كل ذلك في مكان واحد.">
 <meta name="keywords" content="حاسبة زكاة, حاسبة نهاية الخدمة, حاسبة تمويل شخصي السعودية, حاسبة الراتب الصافي, تحويل هجري ميلادي, حاسبات مالية سعودية">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://rashed6c.github.io/">
@@ -13,8 +13,8 @@
 <!-- Open Graph / social sharing -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_SA">
-<meta property="og:title" content="محسوبة | حاسبات مالية سعودية مجانية ودقيقة">
-<meta property="og:description" content="احسب الزكاة، التمويل الشخصي، نهاية الخدمة، الراتب الصافي، وحوّل التاريخ الهجري والميلادي — بدقة وسهولة.">
+<meta property="og:title" content="محسوبة | حاسبات مالية سعودية مجانية">
+<meta property="og:description" content="قدّر الزكاة، التمويل الشخصي، نهاية الخدمة، الراتب الصافي، وحوّل التاريخ الهجري والميلادي — بسهولة.">
 <meta property="og:site_name" content="محسوبة">
 
 <script type="application/ld+json">
@@ -34,13 +34,14 @@
   },
   "featureList": [
     "حاسبة زكاة المال",
-    "حاسبة التمويل الشخصي وفق ضوابط ساما",
+    "حاسبة تقدير مبلغ التمويل وفق ضوابط ساما",
     "حاسبة مكافأة نهاية الخدمة",
     "حاسبة الراتب الصافي بعد التأمينات",
     "تحويل التاريخ بين الهجري والميلادي"
   ]
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -286,7 +287,7 @@
   <!-- ZAKAT -->
   <section class="panel active" id="zakat">
     <h2>حاسبة زكاة المال</h2>
-    <p class="desc">أدخل ممتلكاتك المالية لحساب الزكاة المستحقة على أساس نصاب الذهب (85 جرام).</p>
+    <p class="desc">أدخل ممتلكاتك المالية لتقدير الزكاة المستحقة على أساس نصاب الذهب (85 جرام). التقدير للنقد والذهب المُدَّخر بشكل مباشر؛ الأسهم والاستثمارات لها تفصيل شرعي مختلف (انظر الملاحظة أدناه).</p>
 
     <div class="field">
       <label>سعر جرام الذهب الحالي (عيار 24، بعملتك)</label>
@@ -299,7 +300,7 @@
         <input type="text" inputmode="decimal" id="z-cash" oninput="formatMoneyInput(this)" placeholder="0">
       </div>
       <div class="field">
-        <label>قيمة الاستثمارات والأسهم</label>
+        <label>أموال/استثمارات زكوية أخرى (تقدير يدوي)</label>
         <input type="text" inputmode="decimal" id="z-invest" oninput="formatMoneyInput(this)" placeholder="0">
       </div>
     </div>
@@ -310,7 +311,7 @@
         <input type="text" inputmode="decimal" id="z-goldgrams" oninput="formatMoneyInput(this)" placeholder="0">
       </div>
       <div class="field">
-        <label>الديون المستحقة عليك (تُخصم)</label>
+        <label>ديون يُراد خصمها في هذا التقدير</label>
         <input type="text" inputmode="decimal" id="z-debt" oninput="formatMoneyInput(this)" placeholder="0">
       </div>
     </div>
@@ -319,7 +320,7 @@
 
     <div class="result" id="z-result">
       <div class="headline">
-        <span class="lbl">الزكاة المستحقة</span>
+        <span class="lbl">الزكاة المستحقة (تقديرية)</span>
         <span class="val" id="z-amount">0</span>
       </div>
       <table class="breakdown">
@@ -328,14 +329,14 @@
         <tr><td>هل بلغ المال النصاب؟</td><td id="z-eligible">-</td></tr>
       </table>
       <div class="note" id="z-note"></div>
-      <a href="/articles/zakat" style="display:block; text-align:center; margin-top:14px; color:var(--deep); font-weight:700; font-size:0.88rem; text-decoration:none;">تبي تفهم كيف تُحسب الزكاة بالتفصيل؟ اقرأ الشرح الكامل ←</a>
+      <div class="note">زكاة الأسهم والاستثمارات تختلف فعلياً حسب نوع الاستثمار (مضاربة أم استثمار طويل الأجل) وطريقة التملك ونشاط الشركة — الرقم اللي تدخله هنا تقدير يدوي منك، مو حساب شرعي دقيق لهذي الفئة. لحالتك الخاصة، راجع هيئة شرعية معتمدة.</div>
     </div>
   </section>
 
   <!-- FINANCE -->
   <section class="panel" id="finance">
-    <h2>حاسبة التمويل الشخصي</h2>
-    <p class="desc">احسب الحد الأقصى للتمويل المتاح لك بناءً على راتبك، وفق نسبة الاستقطاع المعتمدة من البنوك السعودية.</p>
+    <h2>حاسبة تقدير مبلغ التمويل</h2>
+    <p class="desc">قدّر مبلغ التمويل الممكن بناءً على راتبك، بطريقة القسط المتناقص (تُقارب الأنظمة البنكية الفعلية أكثر من طريقة الربح الثابت). هذا تقدير مبسّط وليس عرضًا من أي جهة تمويل.</p>
 
     <div class="field">
       <label>الراتب الشهري الإجمالي</label>
@@ -347,48 +348,69 @@
       <input type="text" inputmode="decimal" id="f-existing" oninput="formatMoneyInput(this)" placeholder="0">
     </div>
 
+    <div class="field">
+      <label>نسبة الاستقطاع المستخدمة في هذا التقدير (%)</label>
+      <input type="number" id="f-dbr" placeholder="33.33" step="0.01" value="33.33">
+    </div>
+    <p style="font-size:0.78rem; color:var(--ink-soft); margin-top:-10px;">33.33% قيمة افتراضية شائعة لدى البنوك، لكنها تختلف باختلاف البنك ونوع التمويل (قد تصل لبعض شركات التمويل إلى 45%) — عدّلها إذا عندك رقم مؤكد من جهة التمويل.</p>
+
     <div class="row2">
       <div class="field">
         <label>نسبة الربح السنوية (%)</label>
         <input type="number" id="f-rate" placeholder="مثال: 6.5" step="0.1">
       </div>
       <div class="field">
-        <label>مدة التمويل (بالأشهر)</label>
-        <input type="number" id="f-months" placeholder="مثال: 48" max="60">
+        <label>مدة التمويل (بالأشهر، 1-60)</label>
+        <input type="number" id="f-months" placeholder="مثال: 48" min="1" max="60">
       </div>
     </div>
-    <p style="font-size:0.78rem; color:var(--ink-soft); margin-top:-10px;">الحد الأقصى لمدة التمويل الشخصي 60 شهراً وفق الضوابط المعتمدة.</p>
+    <p style="font-size:0.78rem; color:var(--ink-soft); margin-top:-10px;">الحد الأقصى لمدة التمويل الشخصي 60 شهراً وفق الضوابط المعتمدة عادة.</p>
 
-    <button class="go" onclick="calcFinance()">احسب أقصى تمويل متاح</button>
+    <button class="go" onclick="calcFinance()">احسب تقدير مبلغ التمويل</button>
 
     <div class="result" id="f-result">
       <div class="headline">
-        <span class="lbl">أقصى مبلغ تمويل متاح لك</span>
+        <span class="lbl">تقدير مبلغ التمويل الممكن</span>
         <span class="val" id="f-maxamount">0</span>
       </div>
       <table class="breakdown">
-        <tr><td>أقصى قسط شهري مسموح به (33.33% من الراتب)</td><td id="f-maxinstallment">0</td></tr>
+        <tr><td>أقصى قسط شهري مستخدم بالتقدير</td><td id="f-maxinstallment">0</td></tr>
         <tr><td>إجمالي المبلغ المسدد (مع الربح)</td><td id="f-total">0</td></tr>
         <tr><td>إجمالي الربح</td><td id="f-profit">0</td></tr>
       </table>
-      <div class="note warn">هذا تقدير تقريبي. البنوك السعودية تلتزم عادة بحد أقصى 33.33% من الراتب لإجمالي الالتزامات الشهرية (وقد تصل بعض شركات التمويل والتأجير التمويلي إلى 45%)، والقسط يُحسب هنا بطريقة الربح الثابت. الشروط الفعلية تختلف من بنك لآخر.</div>
-      <div class="note" id="f-zero-note" style="display:none;">النتيجة صفر لأن التزاماتك الشهرية الحالية تساوي أو تتجاوز أصلاً 33.33% من راتبك، فما يتبقى مجال آمن لتمويل إضافي وفق هذا الحساب.</div>
+      <div class="note warn">هذا تقدير تقريبي بطريقة القسط المتناقص (كل قسط يحسب الربح على الرصيد المتبقي فقط، وهي الطريقة الأقرب لواقع تمويل البنوك). الشروط الفعلية تختلف من بنك لآخر.</div>
+      <div class="note">هذه الحاسبة لا تمثل عرضًا ائتمانيًا من أي بنك أو شركة تمويل، ولا تعكس قرار موافقة فعلي. البنك يقيّم طلبك بناءً على عوامل إضافية (سجلك الائتماني في سمة، التزامات أخرى، وسياسته الداخلية) غير مُدرجة بهذا التقدير المبسّط.</div>
+      <div class="note" id="f-zero-note" style="display:none;">النتيجة صفر لأن التزاماتك الشهرية الحالية تساوي أو تتجاوز أصلاً نسبة الاستقطاع المدخلة، فما يتبقى مجال آمن لتمويل إضافي وفق هذا الحساب.</div>
+      <div class="note warn" id="f-error-note" style="display:none;"></div>
     </div>
   </section>
+
 
   <!-- END OF SERVICE -->
   <section class="panel" id="eos">
     <h2>حاسبة مكافأة نهاية الخدمة</h2>
     <p class="desc">وفق نظام العمل السعودي: نصف شهر عن كل سنة من أول 5 سنوات، وشهر كامل عن كل سنة بعدها.</p>
 
-    <div class="row2">
-      <div class="field">
-        <label>الراتب الشهري الأساسي الأخير</label>
-        <input type="text" inputmode="decimal" id="e-salary" oninput="formatMoneyInput(this)" placeholder="مثال: 8000">
-      </div>
-      <div class="field">
-        <label>عدد سنوات الخدمة</label>
-        <input type="number" id="e-years" placeholder="مثال: 6" step="0.1">
+    <div class="field">
+      <label>الأجر الأخير المحتسب للمكافأة</label>
+      <input type="text" inputmode="decimal" id="e-salary" oninput="formatMoneyInput(this)" placeholder="مثال: 8000">
+    </div>
+
+    <div class="field">
+      <label>مدة الخدمة</label>
+      <div class="row2" style="grid-template-columns:1fr 1fr 1fr; gap:10px;">
+        <div>
+          <label style="font-size:0.78rem;">سنوات</label>
+          <input type="number" id="e-years" placeholder="0" min="0">
+        </div>
+        <div>
+          <label style="font-size:0.78rem;">أشهر (0-11)</label>
+          <input type="number" id="e-months" placeholder="0" min="0" max="11">
+        </div>
+        <div>
+          <label style="font-size:0.78rem;">أيام (0-30)</label>
+          <input type="number" id="e-days" placeholder="0" min="0" max="30">
+        </div>
       </div>
     </div>
 
@@ -404,29 +426,36 @@
 
     <div class="result" id="e-result">
       <div class="headline">
-        <span class="lbl">مكافأة نهاية الخدمة المستحقة</span>
+        <span class="lbl">مكافأة نهاية الخدمة المستحقة (تقديرية)</span>
         <span class="val" id="e-amount">0</span>
       </div>
       <table class="breakdown">
+        <tr><td>مدة الخدمة المحسوبة</td><td id="e-duration">-</td></tr>
         <tr><td>المكافأة الكاملة (بدون خصم)</td><td id="e-full">0</td></tr>
         <tr><td>نسبة الاستحقاق المطبّقة</td><td id="e-ratio">-</td></tr>
       </table>
-      <div class="note">هذا حساب تقريبي وفق القواعد العامة لنظام العمل السعودي. قد تختلف التفاصيل حسب نوع العقد وبنود إضافية — للحالات الدقيقة راجع مكتب العمل أو مختصًا قانونيًا.</div>
+      <div class="note">هذا حساب تقريبي وفق القواعد العامة لنظام العمل السعودي. قد توجد حالات واستثناءات تختلف حسب نوع العقد وسبب انتهاء العلاقة العمالية — للحالات الدقيقة راجع مكتب العمل أو مختصًا قانونيًا.</div>
+      <div class="note warn" id="e-error-note" style="display:none;"></div>
     </div>
   </section>
 
   <!-- NET SALARY -->
   <section class="panel" id="salary">
     <h2>حاسبة الراتب الصافي</h2>
-    <p class="desc">تحسب راتبك بعد خصم التأمينات الاجتماعية (GOSI) حسب جنسية الموظف.</p>
+    <p class="desc">تحسب راتبك بعد خصم التأمينات الاجتماعية (GOSI)، مع احتساب الأجر الخاضع للاشتراك بدقة أكبر (أساسي + سكن فقط، وليس كل البدلات).</p>
+
+    <div class="field">
+      <label>الراتب الأساسي الشهري</label>
+      <input type="text" inputmode="decimal" id="s-salary" oninput="formatMoneyInput(this)" placeholder="مثال: 7000">
+    </div>
 
     <div class="row2">
       <div class="field">
-        <label>الراتب الأساسي الشهري</label>
-        <input type="text" inputmode="decimal" id="s-salary" oninput="formatMoneyInput(this)" placeholder="مثال: 9000">
+        <label>بدل السكن الشهري</label>
+        <input type="text" inputmode="decimal" id="s-housing" oninput="formatMoneyInput(this)" placeholder="0">
       </div>
       <div class="field">
-        <label>البدلات الإضافية (سكن، نقل...)</label>
+        <label>بدلات أخرى (نقل، اتصالات...)</label>
         <input type="text" inputmode="decimal" id="s-allow" oninput="formatMoneyInput(this)" placeholder="0">
       </div>
     </div>
@@ -439,26 +468,44 @@
       </select>
     </div>
 
+    <div class="field" id="s-enroll-field">
+      <label>تاريخ الانضمام لنظام التأمينات الاجتماعية</label>
+      <select id="s-enroll">
+        <option value="old">قبل 3 يوليو 2024</option>
+        <option value="new">بعد 3 يوليو 2024 (نظام جديد)</option>
+      </select>
+    </div>
+
+    <div class="field" id="s-newrate-field" style="display:none;">
+      <label>نسبة اشتراك الموظف (النظام الجديد، %)</label>
+      <input type="number" id="s-newrate" placeholder="10.75" step="0.01" value="10.75">
+      <p style="font-size:0.78rem; color:var(--ink-soft); margin-top:6px;">نسبة النظام الجديد ترتفع تدريجياً سنوياً (0.5% كل يوليو حتى 2028) وتختلف المصادر بدقتها الحالية — تحقق من كشف راتبك أو حسابك في منصة التأمينات (GOSI) وعدّل الرقم هنا إذا لزم.</p>
+    </div>
+
     <button class="go" onclick="calcSalary()">احسب الراتب الصافي</button>
 
     <div class="result" id="s-result">
       <div class="headline">
-        <span class="lbl">الراتب الصافي المتوقع</span>
+        <span class="lbl">الراتب الصافي المتوقع (تقديري)</span>
         <span class="val" id="s-net">0</span>
       </div>
       <table class="breakdown">
-        <tr><td>إجمالي الراتب (أساسي + بدلات)</td><td id="s-gross">0</td></tr>
+        <tr><td>إجمالي الراتب (أساسي + سكن + بدلات أخرى)</td><td id="s-gross">0</td></tr>
+        <tr><td>الأجر الخاضع للاشتراك (أساسي + سكن، بحد أقصى 45,000)</td><td id="s-subject">0</td></tr>
+        <tr><td>نسبة الاشتراك المطبّقة</td><td id="s-rate">-</td></tr>
         <tr><td>خصم التأمينات الاجتماعية</td><td id="s-deduction">0</td></tr>
-        <tr><td>نسبة الخصم المطبّقة</td><td id="s-rate">-</td></tr>
       </table>
-      <div class="note">الحساب مبني على نسبة اقتطاع الموظف السعودي من التأمينات (9.75% من الأجر الأساسي: معاشات + تأمين ضد التعطل "ساند"). الموظف غير السعودي عادة لا يُخصم من راتبه، والفرع الوحيد المطبّق عليه (الأخطار المهنية) يدفعه صاحب العمل. الأرقام الفعلية قد تختلف حسب نوع العقد.</div>
+      <div class="note" id="s-note">التأمينات تُحسب على "الأجر الخاضع للاشتراك" فقط (الأساسي + بدل السكن)، بحد أقصى 45,000 ريال شهرياً — البدلات الأخرى (نقل، اتصالات...) لا تدخل في وعاء الاشتراك. الموظف غير السعودي لا يُخصم من راتبه؛ الفرع الوحيد المطبّق عليه (الأخطار المهنية 2%) يدفعه صاحب العمل بالكامل.</div>
+      <div class="note warn" id="s-new-warn" style="display:none;"></div>
+      <div class="note warn" id="s-error-note" style="display:none;"></div>
     </div>
   </section>
+
 
   <!-- DATES -->
   <section class="panel" id="dates">
     <h2>تحويل التاريخ</h2>
-    <p class="desc">حوّل بين التقويم الميلادي والهجري بدقة، حسب نظام أم القرى الرسمي.</p>
+    <p class="desc">حوّل بين التقويم الميلادي والهجري باستخدام تقويم أم القرى.</p>
 
     <div style="border-bottom:1px solid var(--line); padding-bottom:22px; margin-bottom:22px;">
       <div class="field">
@@ -515,7 +562,8 @@
       </div>
     </div>
 
-    <div class="note">التحويل الهجري يعتمد على تقويم أم القرى الرسمي المعتمد في المملكة، وقد يختلف يوم واحد عن تقاويم أخرى تعتمد الرؤية الفلكية المباشرة.</div>
+    <div class="note">التحويل الهجري يعتمد على تقويم أم القرى، وقد يختلف يوم واحد عن تقاويم أخرى تعتمد الرؤية الفلكية المباشرة.</div>
+    <div class="note warn" id="d-error-note" style="display:none;"></div>
   </section>
 
   <footer>الأرقام هنا تقديرية لأغراض التخطيط الشخصي وليست استشارة مالية أو شرعية أو قانونية رسمية.</footer>
@@ -536,14 +584,22 @@
     return new Intl.NumberFormat('en-US', {maximumFractionDigits:2}).format(n);
   }
 
+  // Convert Arabic-Indic digits (٠-٩) to Western digits (0-9)
+  function normalizeDigits(str){
+    const arabicDigits = '٠١٢٣٤٥٦٧٨٩';
+    return str.replace(/[٠-٩]/g, d => arabicDigits.indexOf(d));
+  }
+
   function getNum(id){
     const raw = document.getElementById(id).value || '';
-    const clean = raw.replace(/,/g, '');
+    const normalized = normalizeDigits(raw);
+    const clean = normalized.replace(/,/g, '');
     return parseFloat(clean) || 0;
   }
 
   function formatMoneyInput(el){
-    let raw = el.value.replace(/,/g, '');
+    let raw = normalizeDigits(el.value).replace(/,/g, '');
+    // allow only digits and a single decimal point
     raw = raw.replace(/[^\d.]/g, '');
     const parts = raw.split('.');
     let intPart = parts[0] || '';
@@ -556,6 +612,24 @@
     el.value = intPart + decPart;
   }
 
+  function getPlainNum(id){
+    // for plain type="number" inputs (rate, months, years fields)
+    const raw = document.getElementById(id).value || '';
+    const normalized = normalizeDigits(raw);
+    return parseFloat(normalized);
+  }
+
+  function showError(noteId, resultId, message){
+    const note = document.getElementById(noteId);
+    note.textContent = message;
+    note.style.display = 'block';
+    document.getElementById(resultId).classList.add('show');
+  }
+
+  function hideError(noteId){
+    document.getElementById(noteId).style.display = 'none';
+  }
+
   function calcZakat(){
     const goldPrice = getNum('z-goldprice');
     const cash = getNum('z-cash');
@@ -563,15 +637,24 @@
     const goldGrams = getNum('z-goldgrams');
     const debt = getNum('z-debt');
 
-    const goldValue = goldGrams * goldPrice;
-    const total = cash + invest + goldValue - debt;
-    const nisab = 85 * goldPrice;
-
     const note = document.getElementById('z-note');
+    note.classList.remove('warn');
+
+    // Validation: no negative inputs allowed
+    if(cash < 0 || invest < 0 || goldGrams < 0 || debt < 0 || goldPrice < 0){
+      document.getElementById('z-amount').textContent = '—';
+      document.getElementById('z-total').textContent = '—';
+      document.getElementById('z-nisab').textContent = '—';
+      document.getElementById('z-eligible').textContent = '—';
+      note.textContent = 'لا يمكن إدخال قيم سالبة في أي حقل. تأكد من الأرقام وحاول مرة أخرى.';
+      note.classList.add('warn');
+      document.getElementById('z-result').classList.add('show');
+      return;
+    }
 
     if(goldPrice <= 0){
       document.getElementById('z-amount').textContent = '؟';
-      document.getElementById('z-total').textContent = fmt(total);
+      document.getElementById('z-total').textContent = '—';
       document.getElementById('z-nisab').textContent = '—';
       document.getElementById('z-eligible').textContent = '—';
       note.textContent = 'لازم تدخل سعر جرام الذهب الحالي أولاً لحساب النصاب — بدونه ما تقدر الحاسبة تحدد إذا زكاتك واجبة أو لا. الرقم صفر هنا لا يعني أنه لا زكاة عليك.';
@@ -579,7 +662,11 @@
       document.getElementById('z-result').classList.add('show');
       return;
     }
-    note.classList.remove('warn');
+
+    const goldValue = goldGrams * goldPrice;
+    const rawTotal = cash + invest + goldValue - debt;
+    const total = Math.max(0, rawTotal);
+    const nisab = 85 * goldPrice;
 
     const eligible = total >= nisab;
     const zakat = eligible ? total * 0.025 : 0;
@@ -589,26 +676,55 @@
     document.getElementById('z-nisab').textContent = fmt(nisab);
     document.getElementById('z-eligible').textContent = eligible ? 'نعم' : 'لا';
 
-    if(!eligible){
-      note.textContent = 'إجمالي أموالك أقل من النصاب، فلا تجب عليك الزكاة حاليًا وفق هذا الحساب.';
+    if(rawTotal < 0){
+      note.textContent = 'ديونك المُدخلة تتجاوز إجمالي أموالك الزكوية، فالصافي صفر ولا زكاة عليك وفق هذا التقدير.';
+    } else if(!eligible){
+      note.textContent = 'إجمالي أموالك أقل من النصاب، فلا تجب عليك الزكاة حاليًا وفق هذا التقدير.';
     } else {
-      note.textContent = 'الزكاة المحسوبة هي 2.5% من إجمالي المال الزكوي بعد خصم الديون، بشرط مرور حول (سنة هجرية كاملة) على بلوغ النصاب.';
+      note.textContent = 'الزكاة المقدَّرة هي 2.5% من إجمالي المال الزكوي بعد خصم الديون، بشرط مرور حول (سنة هجرية كاملة) على بلوغ النصاب — بلوغ النصاب وحده لا يكفي بدون مرور الحول.';
     }
     document.getElementById('z-result').classList.add('show');
   }
 
   function calcFinance(){
+    hideError('f-error-note');
     const salary = getNum('f-salary');
     const existing = getNum('f-existing');
-    const rate = parseFloat(document.getElementById('f-rate').value) || 0;
-    let months = parseFloat(document.getElementById('f-months').value) || 0;
-    if(months > 60) months = 60;
-    const years = months / 12;
+    const dbr = getPlainNum('f-dbr');
+    const rate = getPlainNum('f-rate');
+    const months = getPlainNum('f-months');
 
-    const maxInstallment = Math.max(0, (salary * 0.3333) - existing);
-    const factor = 1 + (rate/100) * years;
-    const maxAmount = (months > 0 && factor > 0) ? (maxInstallment * months) / factor : 0;
-    const total = maxAmount * factor;
+    // Validation
+    const errors = [];
+    if(!(salary > 0)) errors.push('الراتب الشهري يجب أن يكون أكبر من صفر.');
+    if(isNaN(months) || months < 1 || months > 60) errors.push('مدة التمويل يجب أن تكون بين 1 و60 شهراً.');
+    if(isNaN(rate) || rate < 0) errors.push('نسبة الربح السنوية لا يمكن أن تكون سالبة.');
+    if(existing < 0) errors.push('الالتزامات الشهرية لا يمكن أن تكون سالبة.');
+    if(isNaN(dbr) || dbr <= 0) errors.push('نسبة الاستقطاع يجب أن تكون أكبر من صفر.');
+
+    if(errors.length > 0){
+      document.getElementById('f-maxamount').textContent = '—';
+      document.getElementById('f-maxinstallment').textContent = '—';
+      document.getElementById('f-total').textContent = '—';
+      document.getElementById('f-profit').textContent = '—';
+      document.getElementById('f-zero-note').style.display = 'none';
+      showError('f-error-note', 'f-result', errors.join(' '));
+      return;
+    }
+
+    const maxInstallment = Math.max(0, (salary * (dbr/100)) - existing);
+    const monthlyRate = (rate/100) / 12;
+
+    let maxAmount;
+    if(maxInstallment <= 0){
+      maxAmount = 0;
+    } else if(monthlyRate > 0){
+      maxAmount = maxInstallment * (1 - Math.pow(1 + monthlyRate, -months)) / monthlyRate;
+    } else {
+      maxAmount = maxInstallment * months;
+    }
+
+    const total = maxInstallment * months;
     const profit = total - maxAmount;
 
     document.getElementById('f-maxamount').textContent = fmt(maxAmount);
@@ -620,9 +736,31 @@
   }
 
   function calcEOS(){
+    hideError('e-error-note');
     const salary = getNum('e-salary');
-    const years = parseFloat(document.getElementById('e-years').value) || 0;
+    const y = getPlainNum('e-years') || 0;
+    const m = getPlainNum('e-months') || 0;
+    const d = getPlainNum('e-days') || 0;
     const type = document.getElementById('e-type').value;
+
+    const errors = [];
+    if(!(salary > 0)) errors.push('الأجر الأخير يجب أن يكون أكبر من صفر.');
+    if(y < 0 || m < 0 || d < 0) errors.push('لا يمكن إدخال قيم سالبة لمدة الخدمة.');
+    if(m > 11) errors.push('حقل الأشهر يجب أن يكون بين 0 و11 (الزيادة عن 11 شهراً تُحسب كسنة إضافية).');
+    if(d > 30) errors.push('حقل الأيام يجب أن يكون بين 0 و30.');
+    if(y === 0 && m === 0 && d === 0) errors.push('أدخل مدة خدمة أكبر من صفر.');
+
+    if(errors.length > 0){
+      document.getElementById('e-amount').textContent = '—';
+      document.getElementById('e-duration').textContent = '—';
+      document.getElementById('e-full').textContent = '—';
+      document.getElementById('e-ratio').textContent = '—';
+      showError('e-error-note', 'e-result', errors.join(' '));
+      return;
+    }
+
+    // Convert to a precise decimal-year figure: years + months/12 + days/365
+    const years = y + (m/12) + (d/365);
 
     let full = 0;
     if(years <= 5){
@@ -643,31 +781,83 @@
     const finalAmount = full * ratio;
 
     document.getElementById('e-amount').textContent = fmt(finalAmount);
+    document.getElementById('e-duration').textContent = `${y} سنة، ${m} شهر، ${d} يوم`;
     document.getElementById('e-full').textContent = fmt(full);
     document.getElementById('e-ratio').textContent = ratioLabel;
     document.getElementById('e-result').classList.add('show');
   }
 
   function calcSalary(){
+    hideError('s-error-note');
     const basic = getNum('s-salary');
-    const allow = getNum('s-allow');
+    const housing = getNum('s-housing');
+    const other = getNum('s-allow');
     const type = document.getElementById('s-type').value;
+    const enroll = document.getElementById('s-enroll').value;
 
-    const gross = basic + allow;
-    let rate = 0;
-    if(type === 'saudi'){
-      rate = 0.0975;
+    const errors = [];
+    if(!(basic > 0)) errors.push('الراتب الأساسي يجب أن يكون أكبر من صفر.');
+    if(housing < 0 || other < 0) errors.push('البدلات لا يمكن أن تكون سالبة.');
+
+    if(errors.length > 0){
+      document.getElementById('s-net').textContent = '—';
+      document.getElementById('s-gross').textContent = '—';
+      document.getElementById('s-subject').textContent = '—';
+      document.getElementById('s-deduction').textContent = '—';
+      document.getElementById('s-rate').textContent = '—';
+      document.getElementById('s-new-warn').style.display = 'none';
+      showError('s-error-note', 's-result', errors.join(' '));
+      return;
     }
-    const deduction = basic * rate;
+
+    const gross = basic + housing + other;
+    // Subject-to-contribution wage = basic + housing only, capped at 45,000
+    const WAGE_CAP = 45000;
+    const subjectWageRaw = basic + housing;
+    const subjectWage = Math.min(subjectWageRaw, WAGE_CAP);
+
+    let rate = 0;
+    let rateLabel = '0% (لا يوجد اقتطاع من الراتب)';
+
+    if(type === 'saudi'){
+      if(enroll === 'new'){
+        const newRateInput = getPlainNum('s-newrate');
+        rate = (isNaN(newRateInput) ? 10.75 : newRateInput) / 100;
+        rateLabel = fmt(rate*100) + '% (النظام الجديد، رقم قابل للتعديل)';
+      } else {
+        rate = 0.0975; // 9% pension + 0.75% SANED — old-system rate, well-established
+        rateLabel = '9.75% من الأجر الخاضع للاشتراك (النظام القديم)';
+      }
+    }
+
+    const deduction = subjectWage * rate;
     const net = gross - deduction;
 
     document.getElementById('s-net').textContent = fmt(net);
     document.getElementById('s-gross').textContent = fmt(gross);
+    document.getElementById('s-subject').textContent = fmt(subjectWage) + (subjectWageRaw > WAGE_CAP ? ' (وصل للحد الأقصى)' : '');
     document.getElementById('s-deduction').textContent = fmt(deduction);
-    document.getElementById('s-rate').textContent = type === 'saudi' ? '9.75% من الأساسي' : '0% (لا يوجد اقتطاع من الراتب)';
+    document.getElementById('s-rate').textContent = rateLabel;
+
+    document.getElementById('s-new-warn').style.display = (type === 'saudi' && enroll === 'new') ? 'block' : 'none';
+    if(type === 'saudi' && enroll === 'new'){
+      document.getElementById('s-new-warn').textContent = 'أنت ضمن النظام الجديد (بعد 3 يوليو 2024)، ونسبته تخضع لزيادة تدريجية سنوية (0.5% كل يوليو حتى 2028) والمصادر تختلف بدقة رقمها الحالي — تأكد من النسبة الفعلية بكشف راتبك وعدّل الحقل أعلاه إذا لزم.';
+    }
+
     document.getElementById('s-result').classList.add('show');
   }
 
+  // Toggle the editable new-system rate field based on enrollment selection
+  document.addEventListener('DOMContentLoaded', function(){
+    const enrollEl = document.getElementById('s-enroll');
+    if(enrollEl){
+      enrollEl.addEventListener('change', function(){
+        document.getElementById('s-newrate-field').style.display = (this.value === 'new') ? 'block' : 'none';
+      });
+    }
+  });
+
+  // ---- Date conversion (Umm al-Qura Hijri) ----
   function hijriToJDN(hy, hm, hd){
     return Math.floor((11*hy+3)/30) + 354*hy + 30*hm - Math.floor((hm-1)/2) + hd + 1948440 - 385;
   }
@@ -700,9 +890,17 @@
   }
 
   function convertToHijri(){
+    hideError('d-error-note');
     const val = document.getElementById('d-greg-input').value;
-    if(!val) return;
+    if(!val){
+      showError('d-error-note', 'd-hijri-result', 'اختر تاريخاً ميلادياً أولاً.');
+      return;
+    }
     const [y,m,d] = val.split('-').map(Number);
+    if(y < 1937 || y > 2077){
+      showError('d-error-note', 'd-hijri-result', 'هذا التحويل مضبوط لسنوات ميلادية بين 1937 و2077 تقريباً (يقابل النطاق المدعوم بتقويم أم القرى). التاريخ المدخل خارج هذا النطاق.');
+      return;
+    }
     const date = new Date(Date.UTC(y, m-1, d));
     const hijriText = gregorianToHijriParts(date);
     document.getElementById('d-hijri-out').textContent = hijriText;
@@ -720,31 +918,34 @@
         return test;
       }
     }
-    return guess;
+    return null; // no exact match found within the search window
   }
 
   function convertToGregorian(){
+    hideError('d-error-note');
     const hy = parseInt(document.getElementById('d-h-year').value);
     const hm = parseInt(document.getElementById('d-h-month').value);
     const hd = parseInt(document.getElementById('d-h-day').value);
-    if(!hy || !hm || !hd) return;
+
+    if(!hy || !hm || !hd){
+      showError('d-error-note', 'd-greg-result', 'أكمل اليوم والشهر والسنة الهجرية كاملة قبل التحويل.');
+      return;
+    }
+    if(hy < 1356 || hy > 1500){
+      showError('d-error-note', 'd-greg-result', 'هذا التحويل مضبوط لسنوات هجرية بين 1356 و1500 تقريباً. السنة المدخلة خارج النطاق المدعوم.');
+      return;
+    }
+
     const result = hijriToGregorianRefined(hy, hm, hd);
+    if(result === null){
+      showError('d-error-note', 'd-greg-result', 'لم يمكن تأكيد هذا التاريخ الهجري بدقة (قد يكون اليوم غير موجود فعلياً في هذا الشهر). تحقق من الأرقام المدخلة.');
+      return;
+    }
     const dayNames = ['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
     const dayName = dayNames[result.getUTCDay()];
     const formatted = `${dayName}، ${result.getUTCDate()}/${result.getUTCMonth()+1}/${result.getUTCFullYear()}`;
     document.getElementById('d-greg-out').textContent = formatted;
     document.getElementById('d-greg-result').classList.add('show');
-  }
-
-  function calcDaysBetween(){
-    const v1 = document.getElementById('d-date1').value;
-    const v2 = document.getElementById('d-date2').value;
-    if(!v1 || !v2) return;
-    const d1 = new Date(v1);
-    const d2 = new Date(v2);
-    const diffDays = Math.round(Math.abs(d2 - d1) / (1000*60*60*24));
-    document.getElementById('d-days-out').textContent = fmt(diffDays) + ' يوم';
-    document.getElementById('d-days-result').classList.add('show');
   }
 
   // Populate Hijri day dropdown (1-30)
